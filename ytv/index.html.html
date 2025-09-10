@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube TV - Limited Time Deal | Call Now!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: #fff;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 600;
+            color: #ff0000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: #ff0000;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .cta-phone-header {
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 24px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-phone-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); }
+            50% { box-shadow: 0 4px 25px rgba(255, 0, 0, 0.5); }
+            100% { box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); }
+        }
+
+        /* Urgency Banner */
+        .urgency-banner {
+            background: linear-gradient(90deg, #ff4757, #ff3742);
+            color: white;
+            padding: 12px 0;
+            text-align: center;
+            font-weight: 600;
+            animation: flash 2s infinite;
+        }
+
+        @keyframes flash {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.85; }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .deal-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 600px;
+        }
+
+        .deal-badge {
+            background: #ff0000;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .pricing-comparison {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .original-price {
+            font-size: 2rem;
+            text-decoration: line-through;
+            opacity: 0.7;
+            color: #ccc;
+        }
+
+        .deal-price {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #00ff88;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .price-period {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
+        .savings-highlight {
+            background: linear-gradient(45deg, #00ff88, #00cc6a);
+            color: #000;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            border-color: #ff0000;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ff0000;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Channels Section */
+        .channels {
+            background: #f1f3f4;
+            padding: 80px 0;
+        }
+
+        .channels h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .channels-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 50px;
+        }
+
+        .channel-logos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .channel-logo {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            color: #333;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .channel-logo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-phone-main {
+            background: white;
+            color: #ff0000;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.8rem;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .cta-phone-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-8px); }
+            60% { transform: translateY(-4px); }
+        }
+
+        .trust-indicators {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Sticky Mobile CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .sticky-cta {
+                display: block;
+            }
+            
+            .sticky-cta a {
+                display: block;
+                background: linear-gradient(135deg, #ff0000, #cc0000);
+                color: white;
+                padding: 16px;
+                text-align: center;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1.2rem;
+                box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4);
+                animation: pulse 2s infinite;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .deal-price {
+                font-size: 3rem;
+            }
+            
+            .cta-phone-main {
+                font-size: 1.4rem;
+                padding: 16px 32px;
+            }
+            
+            .header-content {
+                justify-content: center;
+                gap: 20px;
+            }
+            
+            .logo {
+                font-size: 24px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-comparison {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .channel-logos {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .deal-container {
+                padding: 30px 20px;
+            }
+            
+            .hero {
+                padding: 40px 0;
+            }
+            
+            .features {
+                padding: 60px 0;
+            }
+            
+            .channels {
+                padding: 60px 0;
+            }
+            
+            .cta-section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Urgency Banner -->
+    <div class="urgency-banner">
+        ⚡ EXCLUSIVE DEAL: Get YouTube TV for $49.99/month (Limited Time!) ⚡
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">▶</div>
+                    YouTube TV
+                </div>
+                <a href="tel:18133897462" class="cta-phone-header">📞 Call (813) 389-7462</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Stream Live TV Like Never Before</h1>
+                <p class="hero-subtitle">100+ live channels, unlimited DVR, and no contracts. Experience the future of television.</p>
+                
+                <div class="deal-container">
+                    <div class="deal-badge">🔥 SPECIAL PROMOTION</div>
+                    
+                    <div class="pricing-comparison">
+                        <div>
+                            <div class="original-price">$82.99</div>
+                            <small>Regular Price</small>
+                        </div>
+                        <div>
+                            <div class="deal-price">$49.99</div>
+                            <div class="price-period">/month</div>
+                        </div>
+                    </div>
+                    
+                    <div class="savings-highlight">Save $33/month for 2 months!</div>
+                </div>
+                
+                <a href="tel:18133897462" class="cta-phone-main">📞 Call (813) 389-7462 Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Everything You Need in One Package</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📺</div>
+                    <h3>100+ Live Channels</h3>
+                    <p>Stream your favorite networks including ABC, CBS, NBC, FOX, ESPN, CNN, and more. Local and national coverage included.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">☁️</div>
+                    <h3>Unlimited Cloud DVR</h3>
+                    <p>Record unlimited shows and keep them for up to 9 months. Never miss your favorite programs again.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Watch Anywhere</h3>
+                    <p>Stream on TV, phone, tablet, or computer. Your shows follow you wherever you go with seamless syncing.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>6 User Profiles</h3>
+                    <p>Create personalized experiences for up to 6 family members with individual recommendations and libraries.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏈</div>
+                    <h3>NFL Sunday Ticket</h3>
+                    <p>Add NFL Sunday Ticket to watch every out-of-market Sunday game. Perfect for football fans!</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🚫</div>
+                    <h3>No Long-Term Contracts</h3>
+                    <p>Cancel anytime with no fees, hidden costs, or equipment rentals. Complete flexibility and freedom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channels Section -->
+    <section class="channels">
+        <div class="container">
+            <h2>Your Favorite Channels Included</h2>
+            <p class="channels-subtitle">Stream from major networks and popular cable channels</p>
+            
+            <div class="channel-logos">
+                <div class="channel-logo">ABC</div>
+                <div class="channel-logo">CBS</div>
+                <div class="channel-logo">NBC</div>
+                <div class="channel-logo">FOX</div>
+                <div class="channel-logo">ESPN</div>
+                <div class="channel-logo">CNN</div>
+                <div class="channel-logo">TNT</div>
+                <div class="channel-logo">TBS</div>
+                <div class="channel-logo">USA</div>
+                <div class="channel-logo">FX</div>
+                <div class="channel-logo">AMC</div>
+                <div class="channel-logo">HGTV</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Cut the Cord?</h2>
+            <p>Join millions who've already made the switch to YouTube TV. This special pricing won't last long - secure your deal today!</p>
+            
+            <a href="tel:18133897462" class="cta-phone-main">📞 Call (813) 389-7462</a>
+            
+            <div class="trust-indicators">
+                <div class="trust-item">
+                    <span>✅</span>
+                    <span>Free Trial Available</span>
+                </div>
+                <div class="trust-item">
+                    <span>✅</span>
+                    <span>Expert Setup Support</span>
+                </div>
+                <div class="trust-item">
+                    <span>✅</span>
+                    <span>Instant Activation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 YouTube TV Authorized Dealer. All rights reserved.</p>
+            <p>Call (813) 389-7462 for exclusive offers and immediate activation</p>
+            <p style="font-size: 0.9rem; margin-top: 20px;">
+                *Promotional pricing for new customers only. Regular pricing applies after promotional period. 
+                Terms and conditions apply. YouTube TV is a trademark of Google LLC.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta">
+        <a href="tel:18133897462">📞 Call Now: (813) 389-7462</a>
+    </div>
+
+    <script>
+        // Enhanced phone tracking
+        document.querySelectorAll('a[href^="tel:"]').forEach(phoneLink => {
+            phoneLink.addEventListener('click', function() {
+                console.log('Phone call initiated');
+                // Add analytics tracking here if needed
+            });
+        });
+
+        // Smooth scroll for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add urgency timer (optional)
+        function updateUrgencyTimer() {
+            const banner = document.querySelector('.urgency-banner');
+            const now = new Date();
+            const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+            const timeLeft = endOfDay - now;
+            
+            if (timeLeft > 0) {
+                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                banner.innerHTML = `⚡ EXCLUSIVE DEAL ENDS TODAY: ${hours}h ${minutes}m left! Get YouTube TV for $49.99/month ⚡`;
+            }
+        }
+
+        // Update timer every minute
+        updateUrgencyTimer();
+        setInterval(updateUrgencyTimer, 60000);
+    </script>
+</body>
+</html>
